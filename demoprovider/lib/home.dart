@@ -9,7 +9,7 @@ import 'model/ui.dart';
 const appTitle = "Demo provider";
 
 class Home extends StatelessWidget {
-  String text = lorem(paragraphs: 3, words: 50);
+  String text = lorem(paragraphs: 10, words: 50);
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,12 @@ class Home extends StatelessWidget {
         margin: EdgeInsets.all(10),
         child: Consumer<UI>(
           builder: (context, ui, child) {
-            return RichText(
-              text: TextSpan(
-                  text: text,
-                  style: TextStyle(fontSize: ui.fontSize, color: Colors.black)
+            return SingleChildScrollView(
+              child: RichText(
+                text: TextSpan(
+                    text: text,
+                    style:
+                        TextStyle(fontSize: ui.fontSize, color: Colors.black)),
               ),
             );
           },

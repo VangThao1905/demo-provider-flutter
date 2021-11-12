@@ -20,11 +20,13 @@ class About extends StatelessWidget {
         margin: EdgeInsets.all(10.0),
         child: Consumer<UI>(
           builder: (context, ui, child) {
-            return RichText(
-                text: TextSpan(
-                    text: text,
-                    style: TextStyle(
-                        fontSize: ui.fontSize, color: Colors.lightBlue)));
+            return SingleChildScrollView(
+              child: RichText(
+                  text: TextSpan(
+                      text: text,
+                      style: TextStyle(
+                          fontSize: ui.fontSize, color: Colors.lightBlue))),
+            );
           },
         ),
       ),
